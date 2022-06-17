@@ -44,7 +44,7 @@ class BarangController extends BaseController
 
         $BarangDB = Barang::where('nama_barang', $params['nama_barang'])->first();
 
-        if (!isset($BarangDB)) {
+        if (empty($BarangDB)) {
             if ($addBarang = Barang::create($params)) {
 
                 $response = [
